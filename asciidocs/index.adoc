@@ -1,0 +1,91 @@
+= My Microproject
+Emina Sljivic
+1.0.0
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+//Need this blank line after ifdef, don't know why...
+ifdef::backend-html5[]
+
+// print the toc here (not at the default position)
+//toc::[]
+
+== Description
+
+My micro project is about a bus management system which is used by people who travel by bus and drivers who want to look up their daily schedule. The busses are divided into school busses and daily busses, the type of bus has nothing to do with the schedule or accessibility. Important note: Currently the drivers can only see the bus they are supposed to drive but not how long their shift is going to be (this was removed due to complexity issues).
+
+== Technical Background
+
+The reason behind this micro project is to put the theoretical lessons into practice. In the future, this may include a Quarkus Backend, Android frontend, and more stuff.
+
+== CLD
+
+[plantuml, cld, png]
+....
+@startuml
+hide empty methods
+skinparam linetype ortho
+enum RideType {
+    SCHOOL_BUS
+    DAILY_BUS
+}
+
+
+class BusSchedule {
+    Long id
+    LocalDateTime arrivalTime
+    LocalDateTime leavingTime
+}
+
+
+class Bus{
+    Long id
+    String name
+}
+
+class Driver{
+    Long id
+    String firstName
+    String lastName
+    double salary
+    String svnr
+}
+
+class BusStop{
+    Long id
+    String title
+}
+
+BusStop "*" --> "1" BusStop
+BusSchedule "*" -left- "1" BusStop : has
+BusSchedule "*" -right- "*" Bus : belongs to
+Bus "1" -up-> "1" Driver : drives
+BusSchedule "*" -up-> "1" RideType : is a
+@enduml
+....
+
+== UCD
+
+[plantuml, ucd, png]
+....
+@startuml
+left to right direction
+skinparam linetype ortho
+actor "Gast" as g
+actor "Admin" as a
+rectangle "Bus Management" {
+  usecase "Upated arrival and leaving time of a route" as UC1
+  usecase "Get route of bus" as UC2
+  usecase "Add new bus stop" as UC3
+}
+
+a --|> g
+a -> UC1
+a -> UC3
+g -> UC2
+@enduml
+....
