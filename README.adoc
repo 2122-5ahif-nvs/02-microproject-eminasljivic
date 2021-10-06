@@ -24,6 +24,8 @@ The reason behind this micro project is to put the theoretical lessons into prac
 
 == CLD
 
+TIP: To see the diagrams formatted use the https://2122-5ahif-nvs.github.io/02-microproject-eminasljivic[gh-pages]
+
 [plantuml, cld, png]
 ....
 @startuml
@@ -69,6 +71,8 @@ BusSchedule "*" -up-> "1" RideType : is a
 ....
 
 == UCD
+
+TIP: To see the diagrams formatted use the https://2122-5ahif-nvs.github.io/02-microproject-eminasljivic[gh-pages]
 
 [plantuml, ucd, png]
 ....
