@@ -22,6 +22,15 @@ My micro project is about a bus management system which is used by people who tr
 
 The reason behind this micro project is to put the theoretical lessons into practice. In the future, this may include a Quarkus Backend, Android frontend, and more stuff.
 
+
+== Instructions
+
+```bash
+git clone https://github.com/2122-5ahif-nvs/02-microproject-eminasljivic.git
+./start-db.sh (1)
+./mvnw clean compile quarkus:dev
+```
+
 == CLD
 
 [plantuml, cld, png]

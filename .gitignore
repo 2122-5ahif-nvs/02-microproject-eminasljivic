@@ -1,0 +1,14 @@
+build-docs-html/
+build-docs-pdf/
+build-docs-revealjs/
+target/
+asciidocs/revealjs/
+revealjs.zip
+gh-pages/
+.idea/
+*.iml
+.DS_Store
+.env
+/src/main/java/at/htl/busmanagement/repository/BusScheduleRepository.java
+/src/main/java/at/htl/busmanagement/repository/BusStopRepository.java
+/src/main/java/at/htl/busmanagement/repository/DriverRepository.java
